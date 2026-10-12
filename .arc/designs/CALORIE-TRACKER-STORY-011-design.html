@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CALORIE-TRACKER-STORY-011: User login — Design Prototype</title>
+<style>
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-fg: #1a1f24; /** Primary text color on light backgrounds. */
+  --color-bg: #ffffff; /** App background color. */
+  --color-surface: #f4f6f8; /** Raised surface background, e.g. cards. */
+  --color-muted: #5b6670; /** Secondary text color. */
+  --color-primary: #1d6f42; /** Brand accent for primary actions. */
+  --color-primary-hover: #165533; /** Hover/active state of primary accent. */
+  --color-on-primary: #ffffff; /** Text/icon color on top of primary accent. */
+  --color-border: #d6dbdf; /** Default border color for cards, inputs, dividers. */
+  --color-danger: #b3261e; /** Destructive or error state color. */
+  --color-success: #1d6f42; /** Positive/success state color. */
+  --color-chip-bg: #e4efe8; /** Background for chip/tag elements. */
+  --color-focus-ring: #1d6f42; /** Outline color for keyboard focus indication. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --border-width: 1px;
+  --focus-ring-width: 2px;
+  --size-swatch: 64px;
+  --size-swatch-bar: 24px;
+  --width-swatch: 160px;
+  --width-form: 320px;
+  --width-list: 480px;
+  --width-content: 960px;
+  --font-family-base: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+  --button-primary-background: var(--color-primary);
+  --button-primary-text: var(--color-on-primary);
+  --button-primary-border: var(--color-primary);
+  --button-secondary-background: var(--color-bg);
+  --button-secondary-text: var(--color-primary);
+  --button-secondary-border: var(--color-primary);
+  --card-default-background: var(--color-surface);
+  --card-default-border: var(--color-border);
+  --card-default-radius: var(--radius-md);
+  --card-default-padding: var(--space-3);
+  --chip-default-background: var(--color-chip-bg);
+  --chip-default-text: var(--color-primary);
+  --input-default-background: var(--color-bg);
+  --input-default-border: var(--color-border);
+  --input-default-text: var(--color-fg);
+}
+
+</style>
+<style>
+/* Layout utilities */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stack-lg {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Base typography */
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  font-size: var(--font-size-md);
+}
+
+.text-sm {
+  font-size: var(--font-size-sm);
+}
+
+.text-lg {
+  font-size: var(--font-size-lg);
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border-width: var(--border-width);
+  border-style: solid;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  cursor: pointer;
+}
+
+.btn:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus-ring);
+}
+
+.btn-primary {
+  background: var(--button-primary-background);
+  color: var(--button-primary-text);
+  border-color: var(--button-primary-border);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background: var(--button-secondary-background);
+  color: var(--button-secondary-text);
+  border-color: var(--button-secondary-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface);
+}
+
+/* Card */
+
+.card {
+  background: var(--card-default-background);
+  border: var(--border-width) solid var(--card-default-border);
+  border-radius: var(--card-default-radius);
+  padding: var(--card-default-padding);
+}
+
+/* Chip */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-lg);
+  background: var(--chip-default-background);
+  color: var(--chip-default-text);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Form controls */
+
+.label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-fg);
+  margin-bottom: var(--space-1);
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  border: var(--border-width) solid var(--input-default-border);
+  background: var(--input-default-background);
+  color: var(--input-default-text);
+  font-size: var(--font-size-md);
+}
+
+.input:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-focus-ring);
+}
+
+/* Table */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+/* List */
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+</style>
+<!-- App nav: top bar on desktop (Today · Food Diary · Goals · Progress), bottom tab bar on mobile — shown only once a session exists; the login screen itself has no app nav. -->
+<style>
+  body {
+    font-family: var(--font-family-base);
+    background: var(--color-bg);
+    color: var(--color-fg);
+    margin: 0;
+  }
+  .screen { min-height: 100vh; box-sizing: border-box; }
+  .auth-shell {
+    min-height: calc(100vh - 46px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-4);
+    box-sizing: border-box;
+  }
+  .auth-card {
+    width: 100%;
+    max-width: var(--width-form);
+    background: var(--card-default-background);
+    border: var(--border-width) solid var(--card-default-border);
+    border-radius: var(--card-default-radius);
+    padding: var(--space-4);
+    box-sizing: border-box;
+  }
+  .brand-mark {
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-lg);
+    color: var(--color-primary);
+    margin: 0 0 var(--space-1) 0;
+  }
+  .auth-subtitle {
+    margin: 0 0 var(--space-4) 0;
+    color: var(--color-muted);
+    font-size: var(--font-size-sm);
+  }
+  .field-group { margin-bottom: var(--space-3); }
+  .label {
+    display: block;
+    margin-bottom: var(--space-1);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-fg);
+  }
+  .input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family-base);
+    color: var(--input-default-text);
+    background: var(--input-default-background);
+    border: var(--border-width) solid var(--input-default-border);
+    border-radius: var(--radius-sm);
+  }
+  .input:focus {
+    outline: var(--focus-ring-width) solid var(--color-focus-ring);
+    outline-offset: 1px;
+  }
+  .input.has-error {
+    border-color: var(--color-danger);
+  }
+  .field-error {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    margin-top: var(--space-1);
+    font-size: var(--font-size-xs);
+    color: var(--color-danger);
+  }
+  .field-error::before {
+    content: "⚠";
+    font-size: var(--font-size-sm);
+    line-height: 1;
+  }
+  .form-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-3);
+  }
+  .form-banner.error {
+    background: #fbe9e7;
+    border: var(--border-width) solid var(--color-danger);
+    color: var(--color-danger);
+  }
+  .form-banner.error::before {
+    content: "⚠";
+    font-size: var(--font-size-md);
+    line-height: 1;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 44px;
+    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-md);
+    font-family: var(--font-family-base);
+    font-weight: var(--font-weight-bold);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .btn:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+  .btn-primary {
+    background: var(--button-primary-background);
+    color: var(--button-primary-text);
+    border: var(--border-width) solid var(--button-primary-border);
+  }
+  .btn-primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+  .btn-primary:disabled { opacity: 0.7; cursor: default; }
+  .btn-secondary {
+    background: var(--button-secondary-background);
+    color: var(--button-secondary-text);
+    border: var(--border-width) solid var(--button-secondary-border);
+  }
+  .auth-links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  .auth-links a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .auth-links a:hover { text-decoration: underline; }
+  .auth-links a:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--button-primary-text);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .spinner { animation: none; }
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .redirect-note {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: var(--space-3);
+    border-radius: var(--radius-sm);
+    background: var(--color-chip-bg);
+    color: var(--color-primary);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-3);
+  }
+  .redirect-note::before { content: "🔒"; }
+
+  /* App shell (home screen) */
+  .app-topbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+  .app-topbar .brand-mark { margin: 0; }
+  .app-nav { display: flex; gap: var(--space-3); margin-left: auto; }
+  .app-nav a {
+    font-size: var(--font-size-sm);
+    color: var(--color-muted);
+    text-decoration: none;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+  .app-nav a.active { color: var(--color-primary); font-weight: var(--font-weight-bold); background: var(--color-chip-bg); }
+  .app-user { font-size: var(--font-size-sm); color: var(--color-muted); display: flex; align-items: center; gap: var(--space-2); }
+  .app-user button {
+    background: none; border: none; color: var(--color-primary); cursor: pointer;
+    font-size: var(--font-size-sm); font-family: var(--font-family-base); padding: var(--space-1);
+  }
+  .app-body { padding: var(--space-4); max-width: var(--width-content); margin: 0 auto; }
+  .welcome-banner {
+    background: var(--color-chip-bg);
+    color: var(--color-primary);
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-4);
+    font-size: var(--font-size-sm);
+  }
+  .card-grid { display: flex; gap: var(--space-3); flex-wrap: wrap; }
+  .card-grid .card { flex: 1 1 200px; }
+</style>
+</head>
+<body>
+
+<!-- Reviewer bar -->
+<div id="review-bar" style="position:fixed;top:0;left:0;right:0;z-index:9999;
+  display:flex;align-items:center;gap:10px;padding:8px 16px;
+  background:var(--surface);border-bottom:1px solid var(--border);font-size:13px;font-family:var(--font-sans)">
+  <span style="font-family:var(--font-mono);color:var(--muted)">CALORIE-TRACKER-STORY-011</span>
+  <button id="prev-btn">← Prev</button>
+  <span id="screen-label" style="flex:1;text-align:center;font-weight:600;color:var(--fg)"></span>
+  <button id="next-btn">Next →</button>
+</div>
+<div style="height:46px"></div><!-- spacer -->
+
+<script>
+// Fixture data — simulated user store and session, no real backend
+const FIXTURES = {
+  validUser: { username: "jordan.lee", password: "Calorie2024!" },
+  deniedPage: "Progress"
+};
+</script>
+
+<div id="screens">
+
+<!-- Screen: Login — empty/default state
+     Notes:
+       - Default, untouched form. Username and password fields with visible labels.
+       - "Log in" is the single primary action (AC1/AC2/AC3).
+       - "Forgot password?" and "Create an account" are secondary links, non-functional in this prototype.
+-->
+<!-- State: default -->
+<div class="screen" data-name="Login — Default">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <p class="brand-mark">Calorie Tracker</p>
+      <p class="auth-subtitle">Log in to continue tracking your day.</p>
+
+      <div class="field-group">
+        <label class="label" for="login-username-1">Username</label>
+        <input class="input" id="login-username-1" type="text" autocomplete="username">
+      </div>
+      <div class="field-group">
+        <label class="label" for="login-password-1">Password</label>
+        <input class="input" id="login-password-1" type="password" autocomplete="current-password">
+      </div>
+
+      <button class="btn btn-primary" type="button" onclick="show(1)">Log in</button>
+
+      <div class="auth-links">
+        <a href="#" onclick="return false;">Forgot password?</a>
+        <a href="#" onclick="return false;">Create an account</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screen: Login — redirected from protected page
+     Notes:
+       - Entry point for AC4: an unauthenticated visitor tried to open a page that requires login
+         (e.g. Progress) and was redirected here, with a short banner explaining why.
+       - Same form as default state; the banner is the only addition.
+-->
+<!-- State: redirected -->
+<div class="screen" data-name="Login — Redirected (requires login)">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <p class="brand-mark">Calorie Tracker</p>
+      <p class="auth-subtitle">Log in to continue tracking your day.</p>
+
+      <div class="redirect-note">
+        Log in to view <strong id="redirect-target">Progress</strong>. This page needs an active session.
+      </div>
+
+      <div class="field-group">
+        <label class="label" for="login-username-2">Username</label>
+        <input class="input" id="login-username-2" type="text" autocomplete="username">
+      </div>
+      <div class="field-group">
+        <label class="label" for="login-password-2">Password</label>
+        <input class="input" id="login-password-2" type="password" autocomplete="current-password">
+      </div>
+
+      <button class="btn btn-primary" type="button" onclick="show(0)">Log in</button>
+
+      <div class="auth-links">
+        <a href="#" onclick="return false;">Forgot password?</a>
+        <a href="#" onclick="return false;">Create an account</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screen: Login — validation error (empty fields)
+     Notes:
+       - AC3: submitted with one or both fields empty. Inline, field-specific errors appear;
+         the form is not submitted and the user's typed input (if any) is preserved.
+       - Username left blank, password left blank in this illustrative state.
+-->
+<!-- State: validation-error -->
+<div class="screen" data-name="Login — Validation error (empty fields)">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <p class="brand-mark">Calorie Tracker</p>
+      <p class="auth-subtitle">Log in to continue tracking your day.</p>
+
+      <div class="field-group">
+        <label class="label" for="login-username-3">Username</label>
+        <input class="input has-error" id="login-username-3" type="text" autocomplete="username" aria-invalid="true" aria-describedby="username-err-3">
+        <div class="field-error" id="username-err-3">Enter your username.</div>
+      </div>
+      <div class="field-group">
+        <label class="label" for="login-password-3">Password</label>
+        <input class="input has-error" id="login-password-3" type="password" autocomplete="current-password" aria-invalid="true" aria-describedby="password-err-3">
+        <div class="field-error" id="password-err-3">Enter your password.</div>
+      </div>
+
+      <button class="btn btn-primary" type="button" onclick="show(1)">Log in</button>
+
+      <div class="auth-links">
+        <a href="#" onclick="return false;">Forgot password?</a>
+        <a href="#" onclick="return false;">Create an account</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screen: Login — pending (submitting)
+     Notes:
+       - Brief loading state while the simulated request is in flight (200–400ms in the live flow).
+       - Primary button disables and relabels to "Logging in…" with a spinner; fields are read-only.
+-->
+<!-- State: pending -->
+<div class="screen" data-name="Login — Submitting">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <p class="brand-mark">Calorie Tracker</p>
+      <p class="auth-subtitle">Log in to continue tracking your day.</p>
+
+      <div class="field-group">
+        <label class="label" for="login-username-4">Username</label>
+        <input class="input" id="login-username-4" type="text" value="jordan.lee" disabled>
+      </div>
+      <div class="field-group">
+        <label class="label" for="login-password-4">Password</label>
+        <input class="input" id="login-password-4" type="password" value="••••••••••••" disabled>
+      </div>
+
+      <button class="btn btn-primary" type="button" disabled>
+        <span class="spinner" aria-hidden="true"></span> Logging in…
+      </button>
+
+      <div class="auth-links">
+        <a href="#" onclick="return false;" tabindex="-1" style="pointer-events:none; opacity:0.5;">Forgot password?</a>
+        <a href="#" onclick="return false;" tabindex="-1" style="pointer-events:none; opacity:0.5;">Create an account</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screen: Login — incorrect password
+     Notes:
+       - AC2: credentials submitted but password is wrong. A form-level error banner explains
+         what happened and how to fix it; access is denied and the user stays on the login form.
+       - Password field is cleared for security; username is preserved.
+-->
+<!-- State: error-incorrect-password -->
+<div class="screen" data-name="Login — Incorrect password">
+  <div class="auth-shell">
+    <div class="auth-card">
+      <p class="brand-mark">Calorie Tracker</p>
+      <p class="auth-subtitle">Log in to continue tracking your day.</p>
+
+      <div class="form-banner error" role="alert">
+        That username and password combination doesn't match our records. Check your password and try again.
+      </div>
+
+      <div class="field-group">
+        <label class="label" for="login-username-5">Username</label>
+        <input class="input" id="login-username-5" type="text" value="jordan.lee" autocomplete="username">
+      </div>
+      <div class="field-group">
+        <label class="label" for="login-password-5">Password</label>
+        <input class="input has-error" id="login-password-5" type="password" autocomplete="current-password" aria-invalid="true">
+      </div>
+
+      <button class="btn btn-primary" type="button" onclick="show(1)">Log in</button>
+
+      <div class="auth-links">
+        <a href="#" onclick="return false;">Forgot password?</a>
+        <a href="#" onclick="return false;">Create an account</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Screen: Home — authenticated
+     Notes:
+       - AC1: on successful login the user lands on the app's main/home screen (Today).
+       - Top bar nav per UI guidelines: Today · Food Diary · Goals · Progress, plus a
+         "Log out" action that would return to the Login screen in the live app.
+       - Welcome banner names the authenticated user, confirming the session is active.
+-->
+<!-- State: authenticated-home -->
+<div class="screen" data-name="Home — Authenticated (Today)">
+  <div class="app-topbar">
+    <p class="brand-mark">Calorie Tracker</p>
+    <nav class="app-nav">
+      <a href="#" class="active">Today</a>
+      <a href="#" onclick="return false;">Food Diary</a>
+      <a href="#" onclick="return false;">Goals</a>
+      <a href="#" onclick="return false;">Progress</a>
+    </nav>
+    <div class="app-user">
+      <span>jordan.lee</span>
+      <button type="button" onclick="show(1)">Log out</button>
+    </div>
+  </div>
+  <div class="app-body">
+    <div class="welcome-banner">Welcome back, jordan.lee. Here's where today stands.</div>
+    <div class="card-grid">
+      <div class="card">
+        <strong>Today</strong>
+        <p class="text-sm text-muted">1,420 / 2,000 kcal</p>
+      </div>
+      <div class="card">
+        <strong>Logged meals</strong>
+        <p class="text-sm text-muted">3 meals so far</p>
+      </div>
+      <div class="card">
+        <strong>Goal</strong>
+        <p class="text-sm text-muted">On track for today</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+const screens = Array.from(document.querySelectorAll('.screen'));
+let cur = 0;
+function show(i) {
+  cur = Math.max(0, Math.min(screens.length - 1, i));
+  screens.forEach((s, j) => s.style.display = j === cur ? 'block' : 'none');
+  document.getElementById('screen-label').textContent =
+    `${cur + 1} / ${screens.length}: ${screens[cur].dataset.name}`;
+}
+document.getElementById('prev-btn').onclick = () => show(cur - 1);
+document.getElementById('next-btn').onclick = () => show(cur + 1);
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') show(cur + 1);
+  if (e.key === 'ArrowLeft') show(cur - 1);
+});
+show(0);
+</script>
+
+</body>
+</html>
+
+<!-- arc:css-inlined -->
