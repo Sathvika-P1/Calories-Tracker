@@ -1,0 +1,56 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-fg: #1a1f24; /** Primary text color on light backgrounds. */
+  --color-bg: #ffffff; /** App background color. */
+  --color-surface: #f4f6f8; /** Raised surface background, e.g. cards. */
+  --color-muted: #5b6670; /** Secondary text color. */
+  --color-primary: #1d6f42; /** Brand accent for primary actions. */
+  --color-primary-hover: #165533; /** Hover/active state of primary accent. */
+  --color-on-primary: #ffffff; /** Text/icon color on top of primary accent. */
+  --color-border: #d6dbdf; /** Default border color for cards, inputs, dividers. */
+  --color-danger: #b3261e; /** Destructive or error state color. */
+  --color-success: #1d6f42; /** Positive/success state color. */
+  --color-chip-bg: #e4efe8; /** Background for chip/tag elements. */
+  --color-focus-ring: #1d6f42; /** Outline color for keyboard focus indication. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --border-width: 1px;
+  --focus-ring-width: 2px;
+  --size-swatch: 64px;
+  --size-swatch-bar: 24px;
+  --width-swatch: 160px;
+  --width-form: 320px;
+  --width-list: 480px;
+  --width-content: 960px;
+  --font-family-base: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --line-height-base: 1.5;
+  --button-primary-background: var(--color-primary);
+  --button-primary-text: var(--color-on-primary);
+  --button-primary-border: var(--color-primary);
+  --button-secondary-background: var(--color-bg);
+  --button-secondary-text: var(--color-primary);
+  --button-secondary-border: var(--color-primary);
+  --card-default-background: var(--color-surface);
+  --card-default-border: var(--color-border);
+  --card-default-radius: var(--radius-md);
+  --card-default-padding: var(--space-3);
+  --chip-default-background: var(--color-chip-bg);
+  --chip-default-text: var(--color-primary);
+  --input-default-background: var(--color-bg);
+  --input-default-border: var(--color-border);
+  --input-default-text: var(--color-fg);
+}

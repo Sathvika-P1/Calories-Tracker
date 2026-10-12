@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calorie Tracker — Style Guide</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="prototype-utils.css">
+</head>
+<body>
+<main class="stack-lg" style="padding: var(--space-4); max-width: var(--width-content); margin: 0 auto;">
+
+<h1>Calorie Tracker Style Guide</h1>
+
+<section class="stack">
+  <h2>Color tokens</h2>
+  <div class="row" style="flex-wrap: wrap;">
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-fg);"></div>
+      <span class="text-sm">color-fg</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-bg); border: var(--border-width) solid var(--color-border);"></div>
+      <span class="text-sm">color-bg</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-surface);"></div>
+      <span class="text-sm">color-surface</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-muted);"></div>
+      <span class="text-sm">color-muted</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-primary);"></div>
+      <span class="text-sm">color-primary</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-primary-hover);"></div>
+      <span class="text-sm">color-primary-hover</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-on-primary); border: var(--border-width) solid var(--color-border);"></div>
+      <span class="text-sm">color-on-primary</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-border);"></div>
+      <span class="text-sm">color-border</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-danger);"></div>
+      <span class="text-sm">color-danger</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-success);"></div>
+      <span class="text-sm">color-success</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-chip-bg);"></div>
+      <span class="text-sm">color-chip-bg</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--color-focus-ring);"></div>
+      <span class="text-sm">color-focus-ring</span>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Spacing tokens</h2>
+  <div class="row" style="flex-wrap: wrap;">
+    <div class="stack"><div style="width: var(--space-1); height: var(--size-swatch-bar); background: var(--color-primary);"></div><span class="text-sm">space-1</span></div>
+    <div class="stack"><div style="width: var(--space-2); height: var(--size-swatch-bar); background: var(--color-primary);"></div><span class="text-sm">space-2</span></div>
+    <div class="stack"><div style="width: var(--space-3); height: var(--size-swatch-bar); background: var(--color-primary);"></div><span class="text-sm">space-3</span></div>
+    <div class="stack"><div style="width: var(--space-4); height: var(--size-swatch-bar); background: var(--color-primary);"></div><span class="text-sm">space-4</span></div>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Radius tokens</h2>
+  <div class="row" style="flex-wrap: wrap;">
+    <div class="stack"><div style="width: var(--size-swatch); height: var(--size-swatch); background: var(--color-surface); border: var(--border-width) solid var(--color-border); border-radius: var(--radius-sm);"></div><span class="text-sm">radius-sm</span></div>
+    <div class="stack"><div style="width: var(--size-swatch); height: var(--size-swatch); background: var(--color-surface); border: var(--border-width) solid var(--color-border); border-radius: var(--radius-md);"></div><span class="text-sm">radius-md</span></div>
+    <div class="stack"><div style="width: var(--size-swatch); height: var(--size-swatch); background: var(--color-surface); border: var(--border-width) solid var(--color-border); border-radius: var(--radius-lg);"></div><span class="text-sm">radius-lg</span></div>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Type scale</h2>
+  <p style="font-size: var(--font-size-xs);">font-size-xs — The quick brown fox</p>
+  <p style="font-size: var(--font-size-sm);">font-size-sm — The quick brown fox</p>
+  <p style="font-size: var(--font-size-md);">font-size-md — The quick brown fox</p>
+  <p style="font-size: var(--font-size-lg);">font-size-lg — The quick brown fox</p>
+  <p style="font-family: var(--font-family-base); font-weight: var(--font-weight-regular);">font-family-base / font-weight-regular</p>
+  <p style="font-family: var(--font-family-base); font-weight: var(--font-weight-bold);">font-family-base / font-weight-bold</p>
+  <p class="text-sm">line-height-base — applied to body text throughout this page</p>
+</section>
+
+<section class="stack">
+  <h2>Utility classes</h2>
+  <p class="text-sm">.text-sm — small supporting text</p>
+  <p class="text-lg">.text-lg — emphasized text</p>
+  <p class="text-muted">.text-muted — de-emphasized text</p>
+  <div class="row">
+    <span class="chip">.row</span>
+    <span class="chip">lays chips out</span>
+  </div>
+  <div class="stack-lg">
+    <span class="text-sm">.stack-lg line one</span>
+    <span class="text-sm">.stack-lg line two</span>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Other dimension tokens</h2>
+  <p class="text-sm">border-width, focus-ring-width — visible on the button and input focus examples below.</p>
+  <p class="text-sm">size-swatch, size-swatch-bar, width-swatch, width-form, width-list, width-content — used to lay out this style guide page itself.</p>
+</section>
+
+<section class="stack">
+  <h2>Component aliases</h2>
+  <div class="row" style="flex-wrap: wrap;">
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--button-primary-background);"></div>
+      <span class="text-sm">button.primary.background</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--button-primary-text); border: var(--border-width) solid var(--color-border);"></div>
+      <span class="text-sm">button.primary.text</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--button-primary-border);"></div>
+      <span class="text-sm">button.primary.border</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--button-secondary-background); border: var(--border-width) solid var(--color-border);"></div>
+      <span class="text-sm">button.secondary.background</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--button-secondary-text);"></div>
+      <span class="text-sm">button.secondary.text</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--button-secondary-border);"></div>
+      <span class="text-sm">button.secondary.border</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--card-default-background);"></div>
+      <span class="text-sm">card.default.background</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--card-default-border);"></div>
+      <span class="text-sm">card.default.border</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--card-default-radius); background: var(--color-surface); border: var(--border-width) solid var(--color-border);"></div>
+      <span class="text-sm">card.default.radius</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="padding: var(--card-default-padding); background: var(--color-surface); border: var(--border-width) solid var(--color-border);">
+        <div style="height: var(--size-swatch-bar); background: var(--color-primary);"></div>
+      </div>
+      <span class="text-sm">card.default.padding</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--chip-default-background);"></div>
+      <span class="text-sm">chip.default.background</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--chip-default-text);"></div>
+      <span class="text-sm">chip.default.text</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--input-default-background); border: var(--border-width) solid var(--color-border);"></div>
+      <span class="text-sm">input.default.background</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--input-default-border);"></div>
+      <span class="text-sm">input.default.border</span>
+    </div>
+    <div class="stack" style="width: var(--width-swatch);">
+      <div style="height: var(--size-swatch); border-radius: var(--radius-sm); background: var(--input-default-text);"></div>
+      <span class="text-sm">input.default.text</span>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Buttons</h2>
+  <div class="row">
+    <button class="btn btn-primary">Log meal</button>
+    <button class="btn btn-secondary">Cancel</button>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Card</h2>
+  <div class="card" style="max-width: var(--width-form);">
+    <strong>Today</strong>
+    <p class="text-sm text-muted">1,420 / 2,000 kcal</p>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Chip</h2>
+  <div class="row">
+    <span class="chip">Breakfast</span>
+    <span class="chip">On track</span>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Form controls</h2>
+  <div class="stack" style="max-width: var(--width-form);">
+    <label class="label" for="meal-name">Meal name</label>
+    <input class="input" id="meal-name" type="text" placeholder="Grilled chicken salad">
+  </div>
+</section>
+
+<section class="stack">
+  <h2>List</h2>
+  <div class="stack" style="max-width: var(--width-list);">
+    <div class="list-item">
+      <span>Oatmeal with berries</span>
+      <span class="text-sm text-muted">320 kcal</span>
+    </div>
+    <div class="list-item">
+      <span>Grilled chicken salad</span>
+      <span class="text-sm text-muted">450 kcal</span>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <h2>Table</h2>
+  <table class="table">
+    <thead>
+      <tr><th>Date</th><th>Calories</th><th>Goal</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Oct 10</td><td>1,980</td><td>2,000</td></tr>
+      <tr><td>Oct 11</td><td>2,120</td><td>2,000</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="stack">
+  <h2>UI Guidelines</h2>
+
+  <h3>Navigation</h3>
+  <p>Four sections: <strong>Today</strong> (log meals), <strong>Food Diary</strong> (history),
+  <strong>Goals</strong>, and <strong>Progress</strong> (dashboards/reports). Use a top bar with
+  these as primary links on desktop, since logging is a quick, frequent action that shouldn't
+  require drilling through a sidebar. On mobile, show the same sections as a bottom tab bar,
+  since one-handed phone use is the primary logging context for this product.</p>
+
+  <h3>Layout and density</h3>
+  <p>Favor a spacious, consumer-app layout over a data-dense console: generous spacing
+  (<code>space-3</code>/<code>space-4</code>) between sections, since users are frequently
+  non-technical people checking in briefly, not power users scanning dense tables all day.</p>
+  <p><strong>Breakpoints:</strong></p>
+  <ul>
+    <li><strong>Mobile</strong> (compact, phone widths): single-column stacked layout, bottom
+    tab bar — this is the primary logging surface.</li>
+    <li><strong>Desktop</strong> (wide, laptop/desktop widths): top bar navigation,
+    multi-column dashboards — reports and charts benefit from more horizontal space.</li>
+  </ul>
+
+  <h3>Component usage</h3>
+  <ul>
+    <li>Use <code>.card</code> for a single day's summary, a goal, or a dashboard metric — each
+    is a distinct, glanceable unit of information.</li>
+    <li>Use <code>.list-item</code> rows (in a <code>.stack</code>) for the day's logged meals —
+    order and recency matter more than side-by-side comparison.</li>
+    <li>Use <code>.table</code> for food diary history and report exports — these are
+    comparison-heavy, multi-row/multi-column views where alignment across rows matters.</li>
+    <li>Use <code>.chip</code> for tags like meal type (breakfast/lunch/dinner) or goal status —
+    short, scannable labels attached to a list item or card.</li>
+    <li>Use <code>.btn-primary</code> for the single most important action on a screen (e.g.
+    "Log meal", "Save goal") and <code>.btn-secondary</code> for everything else, so users
+    always have one obvious next step.</li>
+    <li>Use <code>.input</code>/<code>.label</code> pairs for all form fields, so logging and
+    goal-setting feel consistent across the app.</li>
+  </ul>
+
+  <h3>Theme</h3>
+  <p>Light theme only, by default. The target audience checks in casually throughout the day in
+  varied lighting (kitchen, gym, outdoors), where a light, high-contrast surface stays legible.</p>
+
+  <h3>Voice and tone</h3>
+  <p>Encouraging and neutral, never judgmental about food choices or missed goals — tracking
+  should feel like a supportive habit, not a scorecard. Prefer plain language over clinical
+  nutrition jargon, since most users are casual trackers, not dietitians.</p>
+</section>
+
+</main>
+</body>
+</html>
