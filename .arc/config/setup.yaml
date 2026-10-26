@@ -1,2 +1,16 @@
-package_install_commands:
-  npm: "npm install {name}@{version}"
+components:
+  comp_calorie_tracker_api:
+    mode: local
+    test_command: cd apps/api && pnpm test && pnpm test:e2e
+    build_command: cd apps/api && pnpm build
+    devloop_command: cd apps/api && pnpm typecheck && pnpm test
+  comp_web_app:
+    mode: local
+    test_command: cd apps/web && pnpm run test
+    build_command: cd apps/web && pnpm run build
+    devloop_command: cd apps/web && pnpm run typecheck && pnpm run test:unit
+commands:
+  test: (cd apps/api && pnpm test && pnpm test:e2e) && (cd apps/web && pnpm run test)
+  build: (cd apps/api && pnpm build) && (cd apps/web && pnpm run build)
+  devloop: (cd apps/api && pnpm typecheck && pnpm test) && (cd apps/web && pnpm run
+    typecheck && pnpm run test:unit)
